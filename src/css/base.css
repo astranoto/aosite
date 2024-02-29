@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* claim */
+  h1 {
+    @apply text-[40px] leading-8 sm:text-[35px] md:text-[40px];
+  }
+
+  /* titolo */
+  h3 {
+    @apply text-[30px] leading-7 sm:text-[26px] md:text-[30px];
+  }
+
+  /* titoletto */
+  h4 {
+    @apply text-[25px] leading-tight;
+  }
+
+  .btn {
+    @apply border-4 border-black text-[30px] font-bold focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 sm:text-[26px] md:text-[30px];
+  }
+
+  /* testo normale */
+  * {
+    @apply text-[20px];
+  }
+
+  .section-padding {
+    @apply px-6 sm:px-24 md:px-24 xl:px-32 2xl:px-20;
+  }
+
+  /* TO JE TO - TO JE TAJ */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::marker {
+    display: none;
+  }
+
+  .absolute-y-center {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  /* svg {
+    transform-origin: top left;
+  } */
+}
+
+html {
+  scroll-behavior: smooth;
+}

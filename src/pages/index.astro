@@ -1,0 +1,175 @@
+---
+import { Icon } from "astro-icon";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+
+import ClaimSection from "../components/sections/ClaimSection.astro";
+import FaqSection from "../components/sections/FaqSection.astro";
+import MarketSection from "../components/sections/MarketSection.astro";
+import PlanSection from "../components/sections/PlanSection.astro";
+import TestimonialSection from "../components/sections/TestimonialSection.astro";
+import WhatWeOfferSection from "../components/sections/WhatWeOfferSection.astro";
+import WhoWeAreSection from "../components/sections/WhoWeAreSection.astro";
+import HoverableDropdown from "../components/HoverableDropdown.astro";
+---
+
+<Layout title="Soluter - by Astranoto">
+  <main class="transition-all duration-200">
+    <nav
+      id="claim"
+      class="relative flex justify-center px-6 py-6 sm:px-10 md:px-14 2xl:mt-6"
+    >
+      <Icon name="logo" class="w-64 lg:w-72 2xl:w-96" />
+      <HoverableDropdown
+        containerClasses="fixed right-5 z-10 top-8"
+        label="menu"
+        openLeft
+        noArrow
+        links={[
+          {
+            label: "Soluter",
+            href: "#claim",
+          },
+          {
+            label: "Il nostro approccio",
+            href: "#our-approach",
+          },
+          {
+            label: "Cosa offriamo",
+            href: "#what-we-offer",
+          },
+          {
+            label: "Testimonianze",
+            href: "#testimonials",
+          },
+          {
+            label: "Chi siamo",
+            href: "#who-we-are",
+          },
+          {
+            label: "Faq",
+            href: "#faq",
+          },
+        ]}
+      >
+        <div
+          slot="label"
+          class="flex cursor-pointer items-center rounded-md p-2 focus:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-black focus:ring-offset-2 focus-visible:bg-gray-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-black focus-visible:ring-offset-2"
+        >
+          <Icon name="menu" class="h-4" />
+        </div>
+      </HoverableDropdown>
+    </nav>
+    <ClaimSection />
+    <MarketSection containerClasses="border-0 border-b-4 pb-24 border-black" />
+
+    <div class="relative">
+      <Icon
+        name="blocks/orange-black-down-stair"
+        class="absolute -top-[1.4rem] left-10 w-10 sm:left-14 2xl:left-96"
+      />
+      <Icon
+        name="green-rectangle"
+        class="absolute -top-[1.3rem] right-24 h-5 sm:right-44 2xl:right-96"
+      />
+      <Icon
+        name="white-rectangle"
+        class="absolute -top-[1.3rem] right-14 h-5 sm:right-36 2xl:right-80"
+      />
+      <Icon
+        name="purple-rectangle"
+        class="absolute -top-[3.6rem] hidden w-4 lg:right-14 lg:block 2xl:right-44"
+      />
+    </div>
+    <PlanSection
+      id="our-approach"
+      containerClasses="border-0 border-b-4 pb-24 border-black"
+    />
+    <div class="bg-soluter-gray-500 relative">
+      <Icon
+        name="white-rectangle"
+        class="absolute -top-[1.3rem] left-20 h-5 sm:left-16 2xl:left-96"
+      />
+      <Icon
+        name="blocks/blue-purple-oblique"
+        class="absolute -top-[3rem] right-32 h-12 sm:right-44 lg:right-60 2xl:right-96"
+      />
+      <Icon
+        name="black-rectangle"
+        class="absolute -top-[1.3rem] right-10 h-5 sm:right-36 2xl:right-72"
+      />
+      <Icon
+        name="green-rectangle-vertical"
+        class="absolute -top-[1.6rem] right-6 hidden w-4 lg:right-24 lg:block 2xl:right-44"
+      />
+      <Icon
+        name="blocks/orange-red-stacked"
+        class="absolute -top-[2.3rem] right-2 hidden w-5 lg:right-12 lg:block 2xl:right-14"
+      />
+    </div>
+    <WhatWeOfferSection
+      id="what-we-offer"
+      containerClasses="pb-24 border-0 border-b-4 border-black"
+    />
+    <div class="relative">
+      <Icon
+        name="blocks/tree"
+        class="absolute -top-[6.815rem] left-12 w-16 sm:left-16 2xl:left-96"
+      />
+      <Icon
+        name="green-rectangle-vertical"
+        class="absolute -top-[2rem] left-36 h-8 sm:left-36 2xl:left-[32rem]"
+      />
+      <Icon
+        name="red-rectangle"
+        class="absolute -top-[1rem] right-40 h-4 lg:right-64"
+      />
+    </div>
+    <TestimonialSection
+      id="testimonials"
+      containerClasses="pb-24 border-0 border-b-4 pb-24 border-black"
+    />
+    <div class="relative">
+      <Icon
+        name="blocks/orange-black-down-stair"
+        class="absolute -top-[1.4rem] left-10 w-10 sm:left-14 2xl:left-96"
+      />
+      <Icon
+        name="white-rectangle"
+        class="absolute -top-[1.3rem] left-14 h-5 sm:left-44 2xl:left-80"
+      />
+      <Icon
+        name="green-rectangle"
+        class="absolute -top-[1.3rem] right-4 h-5 sm:right-52 2xl:right-72"
+      />
+      <Icon
+        name="purple-rectangle"
+        class="absolute -top-[3.6rem] hidden w-4 lg:right-1 lg:block 2xl:right-44"
+      />
+    </div>
+    <WhoWeAreSection
+      id="who-we-are"
+      containerClasses="pb-24 border-0 border-b-4 border-black"
+    />
+    <div class="relative">
+      <Icon
+        name="blocks/orange-black-down-stair"
+        class="absolute -top-[1.4rem] right-10 w-10 sm:right-14 2xl:right-96"
+      />
+      <Icon
+        name="white-rectangle"
+        class="absolute -top-[1.3rem] right-14 h-5 sm:right-44 2xl:right-80"
+      />
+      <Icon
+        name="green-rectangle"
+        class="absolute -top-[1.3rem] left-4 h-5 sm:left-52 2xl:left-72"
+      />
+      <Icon
+        name="purple-rectangle"
+        class="absolute -top-[3.6rem] hidden w-4 lg:left-1 lg:block 2xl:left-44"
+      />
+    </div>
+    <FaqSection id="faq" />
+    <Footer />
+  </main>
+</Layout>

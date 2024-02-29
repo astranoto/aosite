@@ -1,0 +1,82 @@
+---
+import { twMerge } from "tailwind-merge";
+import Collapse from "./Collapse.astro";
+
+interface Props {
+  title: string;
+  underlinedWords: {
+    word: string;
+    class: string;
+  }[];
+  paragraphs: string[];
+}
+
+const { title, paragraphs, underlinedWords } = Astro.props;
+---
+
+<Collapse>
+  <h4 class="mb-1 items-center text-[20px] font-bold" slot="title">
+    {
+      title.split(" ").map((word) => {
+        const specialChars = /[ ?;,:]+/g;
+
+        const underlinedWord = underlinedWords.find(
+          (underlinedWord) =>
+            underlinedWord.word === word.replaceAll(specialChars, ""),
+        );
+
+        if (underlinedWord) {
+          // strip away any special characters, and add them back after
+          // the word
+          if (word.match(specialChars)) {
+            const specialChar = word.match(specialChars)![0];
+
+            return (
+              <>
+                <span style="font-size: 0;">
+                  <span
+                    class={twMerge(
+                      underlinedWord.class,
+                      "inline-block whitespace-nowrap text-[20px]",
+                    )}
+                  >
+                    {word.replaceAll(specialChars, "")}
+                  </span>
+                  <span class="text-[20px]">{specialChar.trim()}</span>{" "}
+                </span>
+              </>
+            );
+          }
+
+          return (
+            <span>
+              <span
+                class={twMerge(
+                  underlinedWord.class,
+                  "inline-block whitespace-nowrap",
+                )}
+                style="font-size: inherit;"
+              >
+                {word}
+              </span>
+              <span />
+            </span>
+          );
+        }
+
+        return (
+          <>
+            <span>{word} </span>
+          </>
+        );
+      })
+    }
+  </h4>
+  <div slot="content">
+    {
+      paragraphs.map((paragraph) => (
+        <p class="text-start" set:html={paragraph} />
+      ))
+    }
+  </div>
+</Collapse>
