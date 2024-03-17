@@ -19,17 +19,19 @@ const { containerClasses, id } = Astro.props;
     containerClasses,
   )}
 >
+  <h4 class="px-4 text-center font-bold sm:px-10 lg:px-14 xl:px-40 2xl:px-52">
+    Facciamo
+  </h4>
   <div
-    class="grid grid-cols-1 items-center justify-center gap-16 lg:grid-cols-2 lg:items-start xl:mt-20 xl:gap-16 2xl:grid-cols-4 2xl:gap-14"
+    class="grid grid-cols-1 items-center justify-center gap-16 space-y-4 lg:grid-cols-2 lg:items-start xl:mt-20 xl:gap-16 2xl:grid-cols-4 2xl:gap-14"
   >
     {
       markets.map((market) => (
         <TargetMarket
           title={market.title}
-          subtitle={market.subtitle}
-          icon={market.icon}
-          iconClasses={market.iconClasses}
           paragraphs={market.paragraphs}
+          href={market.href}
+          btnTitle={market.btnTitle}
         />
       ))
     }
@@ -53,17 +55,6 @@ const { containerClasses, id } = Astro.props;
         name="blue-rectangle"
         class="absolute top-24 hidden w-5 lg:-left-52 lg:block 2xl:-left-36"
       />
-
-      <h4 class="px-4 text-center sm:px-10 lg:px-14 xl:px-40 2xl:px-52">
-        Questi sono solo alcuni esempi di quello che possiamo realizzare
-        insieme: raccontaci quello di cui hai bisogno e costruiremo la soluzione
-        su misura per raggiungere i tuoi obiettivi.
-      </h4>
     </div>
-    <a
-      href="mailto:ciao@astranoto.com"
-      class="btn mt-12 bg-soluter-purple-500 px-8 py-1 text-white hover:bg-soluter-purple-500/90"
-      target="_blank">Contattaci</a
-    >
   </div>
 </section>
