@@ -25,6 +25,30 @@ module.exports = {
         "soluter-gray": {
           500: "#ececec",
         },
+        "ao-black": {
+          500: "#010101",
+        },
+        "ao-dark-blue": {
+          500: "#102261",
+        },
+        "ao-blue": {
+          500: "#1D3BA6",
+        },
+        "ao-dark-azure": {
+          500: "#5B78DC",
+        },
+        "ao-azure": {
+          500: "#9CA9D7",
+        },
+        "ao-light-azure": {
+          500: "#9BF4FF",
+        },
+        "ao-white": {
+          500: "#F7F8FC",
+        },
+        "ao-hover-blue": {
+          500: "#130D5B",
+        },
       },
     },
   },
