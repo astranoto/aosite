@@ -13,21 +13,35 @@ const { containerClasses, id } = Astro.props;
 <section
   id={id}
   class={twMerge(
-    "relative mt-6 flex items-end justify-center px-6 sm:mt-16 sm:px-10 md:px-14 lg:mt-2",
+    "relative mt-6 flex items-end justify-center px-6 sm:mt-16 sm:px-10 md:px-14 lg:mt-2 text-white",
     containerClasses,
   )}
 >
   <div
     class="absolute -left-8 inline-flex items-end sm:-left-10 lg:left-24 xl:left-32 2xl:left-56"
   >
-    <Icon name="green-rectangle" class="h-5" />
+    <Icon name="logo-ao" class="h-[137px] w-[73px]" />
     <Icon name="purple-rectangle" class="ml-12 hidden w-5 sm:block" />
     <Icon name="orange-square" class="ml-2 h-5 sm:ml-4" />
   </div>
-
-  <h1 class="mx-4 w-max text-center font-medium sm:mx-7">
-    Il software 100% custom.
-  </h1>
+  <div class="flex flex-col space-y-4">
+    <p class="mx-4 w-96 text-center font-medium sm:mx-7">
+      Seguiamo le stelle per tracciare una via nell’ignoto: ti aiutiamo a
+      intercettare, comprendere, anticipare e adattarti ai cambiamenti per
+      affrontare le nuove sfide globali.
+    </p>
+    <p class="mx-4 w-96 text-center font-medium sm:mx-7">
+      Mettiamo insieme creatività e ingegneria per sviluppare soluzioni
+      informatiche e tecnologiche capaci di migliorare le dinamiche produttive e
+      gestionali della tua organizzazione. Progettiamo e realizziamo servizi,
+      applicazioni, interfacce e laboratori per start-up, PMI, PA ed
+      organizzazioni non-profit.
+    </p>
+    <p class="mx-4 w-96 text-center font-medium sm:mx-7">
+      Progettiamo e realizziamo servizi, applicazioni, interfacce e laboratori
+      per start-up, PMI, PA ed organizzazioni non-profit.
+    </p>
+  </div>
   <div
     class="absolute -right-0 inline-flex items-end lg:right-24 xl:right-20 2xl:right-40"
   >
