@@ -5,19 +5,19 @@ import { twMerge } from "tailwind-merge";
 interface Props {
   title: string;
   titleContainerClasses?: string;
-  subtitle: string;
-  icon: string;
   iconClasses?: string;
   paragraphs: string[][];
+  href: string;
+  btnTitle: string;
 }
 
 const {
   title,
-  subtitle,
-  icon,
   paragraphs,
   titleContainerClasses,
   iconClasses,
+  href,
+  btnTitle,
 } = Astro.props;
 ---
 
@@ -29,12 +29,7 @@ const {
     )}
   >
     <h3 class="order-2 font-bold lg:order-1">{title}</h3>
-    <Icon
-      name={icon}
-      class={twMerge("h-10 order-1 lg:order-2 mb-2 lg:mb-0", iconClasses)}
-    />
   </div>
-  <p class="mt-6 text-center font-bold lg:text-start">{subtitle}</p>
   {
     paragraphs.map((paragraph) =>
       paragraph.map((section) => (
@@ -42,4 +37,9 @@ const {
       )),
     )
   }
+  <a
+    href={href}
+    class="btn hover:ao-hover-blue-500 border-1 mt-12 px-8 py-1 text-white"
+    target="_blank">{btnTitle}</a
+  >
 </div>
