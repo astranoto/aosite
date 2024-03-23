@@ -49,6 +49,9 @@ module.exports = {
         "ao-hover-blue": {
           500: "#130D5B",
         },
+        "ao-bg-white": {
+          500: "#F5F5F5",
+        },
       },
     },
   },
