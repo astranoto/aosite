@@ -70,14 +70,15 @@ const { title } = Astro.props;
     />
     <title>{title}</title>
   </head>
-  <body
+  <!-- <body
     class="from-1% overflow-x-hidden bg-gradient-to-b from-ao-black-500 via-ao-dark-blue-500 via-20% to-emerald-500 to-90%"
-  >
+  > -->
+  <body class="bg-ao-bg-white">
     <slot />
     <style is:global>
       html {
         font-family: "Barlow", sans-serif;
-        color: white;
+        color: black;
       }
     </style>
   </body>
