@@ -1,0 +1,54 @@
+---
+import TargetThink from "../TargetThink.astro";
+import think from "../../resources/think.json";
+import Icon from "astro-icon";
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  id?: string;
+  containerClasses?: string;
+}
+
+const { containerClasses, id } = Astro.props;
+---
+
+<section
+  id={id}
+  class={twMerge(
+    "relative mt-16 xl:mt-20 lg:mt-12 section-padding",
+    containerClasses,
+  )}
+>
+  <div class="flex flex-col items-center justify-center space-y-4">
+    <h1 class="px-4 text-center font-bold sm:px-10 lg:px-14 xl:px-40 2xl:px-52">
+      Pensiamo
+    </h1>
+    <p class="mx-4 w-96 text-center font-medium sm:mx-7">
+      Che tu sia una start-up, una PMI, una PA o un’organizzazione non-profit,
+      il nostro approccio si fonda sull’ascolto attivo e l’analisi del contesto
+      di riferimento.
+    </p>
+    <p class="mx-4 w-96 text-center font-medium sm:mx-7">
+      Ogni nuovo progetto è un pezzo di strada da tracciare insieme, ogni passo
+      verso i tuoi obiettivi è un successo comune, ogni grande traguardo è
+      raggiunto con determinazione, un passo per volta.
+    </p>
+  </div>
+
+  <div
+    class="grid grid-cols-1 items-center justify-center gap-16 space-y-4 lg:grid-cols-2 lg:items-start xl:mt-20 xl:gap-16 2xl:grid-cols-4 2xl:gap-14"
+  >
+    {
+      think.map((think) => (
+        <TargetThink title={think.title} paragraphs={think.paragraphs} />
+      ))
+    }
+  </div>
+  <div class="mt-10 flex flex-col items-center">
+    <a
+      href="mailto:ciao@astranoto.com"
+      class="btn mt-12 h-[67px] w-[242px] bg-black px-4 py-1 text-center text-sm text-white"
+      target="_blank">Se hai un'idea in mente<br /> parliamone</a
+    >
+  </div>
+</section>
