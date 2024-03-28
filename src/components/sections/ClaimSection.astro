@@ -10,16 +10,23 @@ interface Props {
 const { containerClasses, id } = Astro.props;
 ---
 
-<section
+<!-- <section
   id={id}
   class={twMerge(
     "relative mt-6 flex items-end justify-center px-6 sm:mt-16 sm:px-10 md:px-14 lg:mt-2",
     containerClasses,
   )}
+> -->
+<section
+  id={id}
+  class={twMerge(
+    "relative mt-6 justify-center flex px-6 sm:mt-16 sm:px-10 md:px-14 lg:mt-2",
+    containerClasses,
+  )}
 >
   <div class="flex flex-row">
     <div class="basis-1/3">
-      <Icon name="disegni_b_w_02-51" class="ml-12 hidden w-[100px] sm:block" />
+      <Icon name="disegni_b_w-09" class="ml-12 hidden w-[50px] sm:block" />
     </div>
     <div class="basis-1/3">
       <div class="flex flex-col space-y-4">
